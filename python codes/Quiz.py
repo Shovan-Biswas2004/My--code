@@ -56,6 +56,7 @@ if choice == 1:
                                 print("Thank you for playing with us", "\N{kissing face with closed eyes}", "\n", "Hope you liked the game ",  "You can try our other categories as well :"+name, "and you are taking Rs"+balance, "home with you ")
                                 quit()
                                 
+                                
 
                                 
                     
@@ -94,7 +95,9 @@ elif choice==2:
     print("1)[Cricket Team]   2)[Hockey Team]", "\n", "3)[Kabaddi Team]  4)[Football Team]", "\n")
     i = input("Enter your choice: ")
     if i==4:
-        print("Congo, you guessed it right and you have won Rs10000", "\N{kissing face}", "\n", "so here's the ")
+         print("Congo, you guessed it right and you have won Rs10000", "\N{kissing face}", "\n", "so here's the ")
+     
+    
 
     
 
