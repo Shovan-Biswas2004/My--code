@@ -6,7 +6,11 @@ screen = pygame.display.set_mode((900,600))
 pygame.display.set_caption('1st Game YaY')
 CLOCK = pygame.time.Clock()
 
-screen.fill('cornflowerblue')
+surface = pygame.Surface((900,600))
+surface.fill('white')
+
+background= pygame.image.load(os.path.join('python codes', 'files', 'background.webp'))
+background_new = pygame.transform.scale(background,(900,600))
 ship= pygame.image.load(os.path.join('python codes', 'files', 'ship.png'))
 tie= pygame.image.load(os.path.join('python codes', 'files', 'tie.png'))
 ship_new= pygame.transform.scale(ship,(80,70))
@@ -19,6 +23,8 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
+    screen.blit(surface,(0,0))
+    screen.blit(background_new,(0,0))
     
     screen.blit(ship_new,first_ship)
     screen.blit(tie_new,sec_ship)
