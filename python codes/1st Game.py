@@ -36,6 +36,7 @@ while True:
     enter = pygame.key.get_pressed()
     if enter[pygame.K_SPACE]:
         no=1
+        
     if no==1:
               
         keys = pygame.key.get_pressed()
@@ -56,7 +57,7 @@ while True:
             first_ship.x-=3
         if key[pygame.K_d] and first_ship.x<365:
             first_ship.x+=3
-    print(border)      
+          
     CLOCK.tick(60)
     pygame.display.update()
               
