@@ -28,6 +28,24 @@ while True:
     
     screen.blit(ship_new,first_ship)
     screen.blit(tie_new,sec_ship)
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_UP]:
+        sec_ship.y-=1
+    elif keys[pygame.K_DOWN]:
+        sec_ship.y+=1
+    elif keys[pygame.K_LEFT]:
+        sec_ship.x-=1
+    elif keys[pygame.K_RIGHT]:
+        sec_ship.x+=1
+    key = pygame.key.get_pressed()   
+    if key[pygame.K_w]:
+        first_ship.y-=1
+    elif key[pygame.K_s]:
+        first_ship.y+=1
+    elif key[pygame.K_a]:
+        first_ship.x-=1
+    elif key[pygame.K_d]:
+        first_ship.x+=1
           
     CLOCK.tick(60)
     pygame.display.update()
