@@ -12,6 +12,7 @@ surface = pygame.Surface((900,600))
 surface.fill('white')
 font = pygame.font.Font(None,40)
 health_font = pygame.font.SysFont('comicsans', 40)
+winner_font = pygame.font.SysFont('Bauhaus 93', 40)
 first_bullet =[]
 sec_bullet =[]
 max_bullet = 3
@@ -20,6 +21,12 @@ sec_hit = pygame.USEREVENT +2
 first_health = 10
 sec_health = 10
 bullet= 0
+def draw_winner(name):
+    winner_text = winner_font.render(name, 1, 'white')
+    screen.blit(winner_text,(900//2- winner_text.get_width()/2,600//2-winner_text.get_height()/2))
+    pygame.display.update()
+    pygame.time.delay(2000)
+
 def handle_bullets(first_bullet,sec_bullet,first_ship,sec_ship):
     for bullet in first_bullet:
         bullet.x+= 7
@@ -47,8 +54,7 @@ def draw_window(first_bullet,sec_bullet, first_health, sec_health ):
 
 text = font.render('Please press space to start',True,'white')
 textm= text.get_rect(midbottom = (440,460))
-#score1 = health_font.render("Score: "+ str(first_health), False , 'white')
-#score2 = health_font.render("Score: "+ str(sec_health), False , 'white')
+
 background= pygame.image.load(os.path.join('python codes', 'files', 'background.webp'))
 background_new = pygame.transform.scale(background,(900,600))
 ship= pygame.image.load(os.path.join('python codes', 'files', 'ship.png'))
@@ -87,7 +93,11 @@ while True:
     if sec_health<=0:
         winner = "The FORCE won"
     if winner!="":
-        pass 
+        draw_winner(winner)
+        break
+
+        
+         
 
 
     handle_bullets(first_bullet,sec_bullet,first_ship,sec_ship)
@@ -128,7 +138,7 @@ while True:
             first_ship.x-=3
         if key[pygame.K_d] and first_ship.x<365:
             first_ship.x+=3
-       
+     
     CLOCK.tick(60)
     pygame.display.update()
               
