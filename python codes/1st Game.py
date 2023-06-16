@@ -96,8 +96,8 @@ while True:
                
                 sec_bullet.append(bullet)
                 
-                if event.type == sec_hit:
-                    sec_health-=1
+        if event.type == sec_hit:
+             sec_health-=1
             
 
         if event.type == first_hit:
